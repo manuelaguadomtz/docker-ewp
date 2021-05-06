@@ -1,0 +1,41 @@
+version: "2"
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE=ewp
+      - MYSQL_USER=ewpuser
+      - MYSQL_PASSWORD=ewppassword
+      - MYSQL_ROOT_PASSWORD=ewppassword
+    networks:
+      - inner
+    ports:
+      - "3306:3306"
+
+  web:
+    depends_on:
+      - db
+    build: local-ewp
+    networks:
+      inner:
+      outer:
+        aliases:
+          - local.ewp.uma.es
+
+  registry:
+    build: local-registry
+    networks:
+      outer:
+        aliases:
+          - local.dev-registry.erasmuswithoutpaper.eu
+
+  proxy:
+    build: proxy
+    networks:
+      - outer
+    ports:
+      - "1328:80"
+
+networks:
+  inner:
+  outer:
