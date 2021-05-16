@@ -16,6 +16,8 @@ services:
     depends_on:
       - db
     build: local-ewp
+    volumes:
+      - ./local-ewp/ewp-data:/root:ro
     networks:
       inner:
       outer:
@@ -23,7 +25,10 @@ services:
           - local.ewp.uma.es
 
   registry:
-    build: local-registry
+    image: docker.pkg.github.com/erasmus-without-paper/ewp-registry-service/ewp-registry-service:latest
+    entrypoint: /root/entrypoint_register_keys.sh
+    volumes:
+      - ./local-registry/registry_data:/root
     networks:
       outer:
         aliases:

@@ -1,0 +1,9 @@
+<tomee>
+  <Resource id="ewpdatasource" type="DataSource">
+    JdbcDriver com.mysql.jdbc.Driver
+    JdbcUrl jdbc:mysql://db:3306/ewp
+    JtaManaged true
+    UserName ewpuser
+    Password ewppassword
+  </Resource>
+</tomee>
