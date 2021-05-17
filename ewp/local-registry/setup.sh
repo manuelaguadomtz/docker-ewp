@@ -15,7 +15,6 @@ cp ../entrypoint_register_keys.sh .
 cp ../local_application.properties application.properties
 cp -r ../keys .
 cp keys/cert.pem keys/certs_to_trust/registry_cert.pem
-cp keys/local-ewp.pem keys/certs_to_trust
 echo "" > manifest-sources.xml
 echo "<manifest-sources>" >> manifest-sources.xml
 for MANIFEST_URL in $@; do
