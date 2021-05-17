@@ -1,4 +1,4 @@
 
 <manifest-sources>
-<source><location>https://local.ewp.uma.es/manifest.xml</location></source>
+<source><location>https://local.ewp.uma.es/ewp/rest/manifest</location></source>
 </manifest-sources>
