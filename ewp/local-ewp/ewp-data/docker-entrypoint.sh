@@ -19,5 +19,7 @@ done
 cp /root/mysql-connector-java-8.0.21.jar /usr/local/tomee/lib/mysql-connector-java-8.0.21.jar
 cp /root/conf/tomee.xml /usr/local/tomee/conf/tomee.xml
 cp /root/conf/server.xml /usr/local/tomee/conf/server.xml
+cp /root/conf/ewp.properties /usr/local/tomee/conf/ewp.properties
+echo "ewp.override.properties=/usr/local/tomee/conf/ewp.properties" >> /usr/local/tomee/conf/catalina.properties
 cd /usr/local/tomee
 catalina.sh run
