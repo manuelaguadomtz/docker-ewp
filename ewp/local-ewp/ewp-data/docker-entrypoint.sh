@@ -2,11 +2,11 @@
 # Configure EWP
 unzip /root/ewp-reference-connector-1.0-SNAPSHOT.war -d /usr/local/tomee/webapps/ewp
 mkdir -p /usr/local/tomee/certs
-keytool -v -imporyytkeystore -srckeystore /root/keys/ewp-local-uma.p12 -srcstoretype PKCS12 \
+keytool -v -importkeystore -srckeystore /root/keys/ewp-local-uma.p12 -srcstoretype PKCS12 \
 	-destkeystore /usr/local/tomee/certs/ewp-local-uma.jks -deststoretype JKS \
 	-srcstorepass changeit -deststorepass changeit
  
-keytool -v -imporyytkeystore -srckeystore /root/keys/httpsignature.p12 -srcstoretype PKCS12 \
+keytool -v -importkeystore -srckeystore /root/keys/httpsignature.p12 -srcstoretype PKCS12 \
 	-destkeystore /usr/local/tomee/certs/ewp-local-uma.jks -deststoretype JKS \
 	-srcstorepass changeit -deststorepass changeit
 
