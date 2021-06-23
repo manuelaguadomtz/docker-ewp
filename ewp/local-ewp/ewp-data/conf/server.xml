@@ -90,7 +90,8 @@
     <Connector port="443" protocol="org.apache.coyote.http11.Http11NioProtocol"
                maxThreads="150" SSLEnabled="true" secure="true" scheme="https"
                keystoreFile="certs/ewp-local-uma.jks" keystorePass="changeit"
-               keyAlias="ewp-local-uma" clientAuth="false"/>
+               keyAlias="ewp-local-uma" clientAuth="want" truststoreFile="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts"
+		trustStorePass="changeit"/>
     
     <!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
          This connector uses the APR/native implementation which always uses

@@ -1,5 +1,6 @@
 #!/bin/bash
 # Configure EWP
+rm -rf /usr/local/tomee/webapps/ewp
 unzip /root/ewp-reference-connector-2.0-SNAPSHOT.war -d /usr/local/tomee/webapps/ewp
 mkdir -p /usr/local/tomee/certs
 keytool -v -importkeystore -srckeystore /root/keys/ewp-test-uma.p12 -srcstoretype PKCS12 \

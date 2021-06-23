@@ -1,14 +1,15 @@
 #!/bin/bash
 # Configure EWP
-unzip /root/ewp-reference-connector-2.0-SNAPSHOT.war -d /usr/local/tomee/webapps/ewp
+rm -rf /usr/local/tomee/webapps/ROOT
+unzip /root/ewp-reference-connector-3.0.0-SNAPSHOT.war -d /usr/local/tomee/webapps/ROOT
 mkdir -p /usr/local/tomee/certs
 keytool -v -importkeystore -srckeystore /root/keys/ewp-local-uma.p12 -srcstoretype PKCS12 \
 	-destkeystore /usr/local/tomee/certs/ewp-local-uma.jks -deststoretype JKS \
 	-srcstorepass changeit -deststorepass changeit
  
-keytool -v -importkeystore -srckeystore /root/keys/httpsignature.p12 -srcstoretype PKCS12 \
-	-destkeystore /usr/local/tomee/certs/ewp-local-uma.jks -deststoretype JKS \
-	-srcstorepass changeit -deststorepass changeit
+#keytool -v -importkeystore -srckeystore /root/keys/httpsignature.p12 -srcstoretype PKCS12 \
+#	-destkeystore /usr/local/tomee/certs/ewp-local-uma.jks -deststoretype JKS \
+#	-srcstorepass changeit -deststorepass changeit
 
 CACERTS_STORE="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts"
 for CERTIFICATE in /root/keys/certs_to_trust/*.pem; do
