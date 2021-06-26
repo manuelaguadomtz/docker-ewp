@@ -1,0 +1,4 @@
+# Ignoring directories created by setup.sh
+local-ewp/ewp-data/keys/certs_to_trust/
+local-registry/keys/certs_to_trust/
+local-registry/registry_data/
