@@ -15,6 +15,7 @@ Your browser should be configured to trust the (sefl-signed) certificates in:
 
 This can be run with the following commands:
 ```
+$ cd ewp
 $ ./clean.sh
 $ ./setup.sh
 $ docker-compose up -d
